@@ -728,6 +728,7 @@ function pk_get_static_url()
             break;
         default:
             $url_pre = PUOCK_ABS_URI;
+            $url_pre = str_replace('http', parse_url(get_option('siteurl'))['scheme'], PUOCK_ABS_URI);
     }
     return $url_pre;
 }
